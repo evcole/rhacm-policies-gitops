@@ -9,7 +9,7 @@ This repository provides out-of-the-box automation for continuous delivery of RH
 ## Setup
 
 1. Clone the repository
-`git clone https://github.com/evcole/pull-secret-manager.git`
+`git clone https://github.com/evcole/rhacm-policies-gitops.git`
 2. Apply the application manifest
 `cd pull-secret-manager`
 `oc apply -f bootstrap/application.yaml`
