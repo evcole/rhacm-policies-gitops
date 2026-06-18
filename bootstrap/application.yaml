@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rhacm-policies
+  namespace: openshift-gitops
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rhacm-policies
+  project: default
+  source:
+    repoURL: https://github.com/evcole/pull-secret-manager.git
+    targetRevision: main
+    path: policies/pull-secret
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

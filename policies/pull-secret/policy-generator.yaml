@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: pull-secret-policy
+policyDefaults:
+  namespace: rhacm-policies
+  remediationAction: enforce
+  complianceType: musthave
+
+policies:
+  - name: pull-secret
+    manifests:
+      - path: pull-secret-policy.yaml
