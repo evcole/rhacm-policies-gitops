@@ -1,7 +1,6 @@
-# Global pull-secret management using RHACM PolicyGenerator and ExternalSecrets
+# RHACM Policies
 
-This policy provides automation for managing the content of the global OpenShift pull secret across managed clusters.
-The policy looks up and decodes an existing secret on the cluster, then merges them into the cluster-wide pull-secret in `openshift-config`. Unique entries from either secret are kept. Matching entries will be overwritten, keeping the content of the imported secret.  
+This repository provides out-of-the-box automation for continuous delivery of RHACM policies to a hub cluster using OpenShift GitOps.
 
 ## Prerequisites
 * A RHACM hub cluster
@@ -14,4 +13,3 @@ The policy looks up and decodes an existing secret on the cluster, then merges t
 2. Apply the application manifest
 `cd pull-secret-manager`
 `oc apply -f bootstrap/application.yaml`
-
