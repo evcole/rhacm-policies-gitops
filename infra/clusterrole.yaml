@@ -47,3 +47,4 @@ rules:
       - placements/status
       - placementdecisions
       - placementdecisions/status
+      - managedclustersetbindings
