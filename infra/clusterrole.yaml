@@ -48,3 +48,12 @@ rules:
       - placementdecisions
       - placementdecisions/status
       - managedclustersetbindings
+  # Required by OCM validating webhook to bind a namespace to a ManagedClusterSet.
+  - verbs:
+      - create
+    apiGroups:
+      - cluster.open-cluster-management.io
+    resources:
+      - managedclustersets/bind
+    resourceNames:
+      - global
