@@ -9,7 +9,7 @@ spec:
     namespace: rhacm-policies
   project: default
   source:
-    repoURL: https://github.com/evcole/pull-secret-manager.git
+    repoURL: https://github.com/evcole/rhacm-policies-gitops.git
     targetRevision: main
     path: policies/pull-secret
   syncPolicy:
