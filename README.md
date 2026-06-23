@@ -8,7 +8,7 @@ This repository provides out-of-the-box automation for continuous delivery of RH
 
 ## Setup
 
-1. Clone the repository
+1. Clone the repository  
 `git clone https://github.com/evcole/rhacm-policies-gitops.git`
 2. Patch the ArgoCD instance to include the kustomize plugin definitions and RHACM image tag
 3. Grant ArgoCD the necessary permissions to manage RHACM policies  
