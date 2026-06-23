@@ -3,6 +3,9 @@ kind: Kustomization
 
 resources:
   - infra/namespace.yaml
+  - infra/managedclustersetbinding.yaml
+  - infra/clusterrole.yaml
+  - infra/clusterrolebinding.yaml
 
 generators:
   - policies/pull-secret/policy-generator.yaml
