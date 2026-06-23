@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/evcole/rhacm-policies-gitops.git
     targetRevision: main
-    path: policies/pull-secret
+    path: .
   syncPolicy:
     automated:
       prune: true
