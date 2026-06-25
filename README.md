@@ -4,7 +4,6 @@ This repository provides out-of-the-box automation for continuous delivery of RH
 
 ## Prerequisites
 * A RHACM hub cluster
-* OpenShift GitOps installed (ArgoCD)
 
 ## Setup
 
