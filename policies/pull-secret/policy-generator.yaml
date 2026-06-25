@@ -2,6 +2,8 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
   name: pull-secret-policy
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
 policyDefaults:
   namespace: rhacm-policies
   remediationAction: enforce

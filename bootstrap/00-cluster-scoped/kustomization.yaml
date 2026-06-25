@@ -1,0 +1,6 @@
+apiVersion: kustomize.config.k8s.io
+kind: Kustomization
+
+resources:
+  - rhacm-policies-namespace.yaml
+  - managedclustersetbinding.yaml
