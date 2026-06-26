@@ -77,8 +77,28 @@ spec:
       requests:
         cpu: 250m
         memory: 128Mi
+  kustomizeBuildOptions: --enable-alpha-plugins
   repo:
-    resources:
+    env:
+    - name: KUSTOMIZE_PLUGIN_HOME
+      value: /etc/kustomize/plugin
+    initContainers:
+    - args:
+      - -c
+      - cp /policy-generator/PolicyGenerator-not-fips-compliant /policy-generator-tmp/PolicyGenerator
+      command:
+      - /bin/bash
+      image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel9@sha256:7058330179afaacb841c2c28cecc4946ad42ec8941c0bd94f573eca179e2c933
+      name: policy-generator-install
+      volumeMounts:
+      - mountPath: /policy-generator-tmp
+        name: policy-generator
+    volumeMounts:
+    - mountPath: /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator
+      name: policy-generator
+    volumes:
+    - emptyDir: {}
+      name: policy-generator   resources:
       limits:
         cpu: "1"
         memory: 1Gi
@@ -193,25 +213,3 @@ spec:
     provider: dex
   tls:
     ca: {}
-  kustomizeBuildOptions: --enable-alpha-plugins
-  repo:
-    env:
-    - name: KUSTOMIZE_PLUGIN_HOME
-      value: /etc/kustomize/plugin
-    initContainers:
-    - args:
-      - -c
-      - cp /policy-generator/PolicyGenerator-not-fips-compliant /policy-generator-tmp/PolicyGenerator
-      command:
-      - /bin/bash
-      image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel9@sha256:7058330179afaacb841c2c28cecc4946ad42ec8941c0bd94f573eca179e2c933
-      name: policy-generator-install
-      volumeMounts:
-      - mountPath: /policy-generator-tmp
-        name: policy-generator
-    volumeMounts:
-    - mountPath: /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator
-      name: policy-generator
-    volumes:
-    - emptyDir: {}
-      name: policy-generator
