@@ -10,4 +10,4 @@ policyDefaults:
 policies:
   - name: pull-secret
     manifests:
-      - path: pull-secret-policy.yaml
+      - path: pull-secret/pull-secret-policy.yaml
