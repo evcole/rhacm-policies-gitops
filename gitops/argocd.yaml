@@ -4,7 +4,7 @@ metadata:
   name: openshift-gitops
   namespace: openshift-gitops
 spec:
-  kustomizeBuildOptions: --enable-alpha-plugins
+  kustomizeBuildOptions: --enable-alpha-plugins --enable-exec
   repo:
     env:
     - name: KUSTOMIZE_PLUGIN_HOME
