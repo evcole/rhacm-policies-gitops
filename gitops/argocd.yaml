@@ -98,7 +98,8 @@ spec:
       name: policy-generator
     volumes:
     - emptyDir: {}
-      name: policy-generator   resources:
+      name: policy-generator   
+    resources:
       limits:
         cpu: "1"
         memory: 1Gi
