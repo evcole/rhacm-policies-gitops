@@ -20,4 +20,8 @@ It may be necessary to restart the OpenShift GitOps resources:
 4. Verify ArgoCD is deployed and the application was created successfully  
 `oc get pods -n openshift-gitops`  
 `oc get applications.argoproj.io rhacm-policies -n openshift-gitops`  
-`oc describe applications.argoproj.io rhacm-policies -n openshift-gitops`  
+`oc describe applications.argoproj.io rhacm-policies -n openshift-gitops` 
+
+## Policies
+
+If configured properly, the `rhacm-policies` Argo application will deliver the policies to the hub cluster. To add new policies, simply create a new directory under policies/ and add the requisite manifests. If using Policy Generator, be sure to add the path entry to the `generators` in `policies/kustomization.yaml`. If using generic policies, add to the `resources` in `policies/kustomization.yaml`.  
