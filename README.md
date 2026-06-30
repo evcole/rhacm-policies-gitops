@@ -7,10 +7,10 @@ This repository provides out-of-the-box automation for continuous delivery of RH
 
 ## Setup
 
-1. Clone the repository
-`git clone https://github.com/evcole/rhacm-policies-gitops.git`
-`cd rhacm-policies-gitops`
-2. Apply the bootstrap manifests
+1. Clone the repository  
+`git clone https://github.com/evcole/rhacm-policies-gitops.git`  
+`cd rhacm-policies-gitops`  
+2. Apply the bootstrap manifests  
 `oc apply -k bootstrap/`  
 See the [Integrating Policy Generator documentation](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.17/html/gitops/gitops-overview#integrate-pol-gen-ocp-gitops)  
 3. Apply the ArgoCD manifests  
